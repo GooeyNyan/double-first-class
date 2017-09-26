@@ -10,6 +10,8 @@ npm run build
 
 前端工程化初试水
 
+尝试组件化的思想（虽然还是以DOM操作为主的页面控制），就近维护的思想，CSS和images置于同一文件夹下，方便关联管理
+
 - webpack打包
 
 - prettier + eslint进行格式化和验证
