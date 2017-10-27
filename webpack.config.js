@@ -1,5 +1,7 @@
+/* eslint-disable */
 const webpack = require("webpack");
 const path = require("path");
+const fs = require("fs");
 
 // plugins
 const ExtraTextPlugin = require("extract-text-webpack-plugin");
@@ -13,7 +15,8 @@ const isProduction = nodeEnv || "production";
 
 // paths
 const entryPath = path.resolve(__dirname, "src/index.js");
-const buildPath = path.resolve(__dirname, "dist");
+// const buildPath = path.resolve(__dirname, "dist");
+const buildPath = path.resolve(__dirname);
 const fontsPath = path.posix.join("dist", "fonts/[name].[hash:7].[ext]");
 const imgPath = path.resolve(__dirname, "images");
 const srcPath = path.resolve("src");
@@ -37,8 +40,8 @@ const rules = [
         loader: "url-loader",
         // 配置url-loader 的可选项
         options: {
-          // 限制图片大小 10000B，小于限制会将图片转换为base64格式
-          limit: 10000,
+          // 限制图片大小 15360B，小于限制会将图片转换为base64格式
+          limit: 15360,
           // 超出限制，创建的文件格式
           // build/images/[文件名].[hash].[图片格式]
           name: "images/[name].[hash].[ext]"
@@ -75,7 +78,8 @@ const rules = [
 
 // common plugins
 const plugins = [
-  new CleanWebpackPlugin(["dist/bundle.*.js", "dist/bundle.*.css"], {
+  // new CleanWebpackPlugin(["dist/bundle.*.js", "dist/bundle.*.css"], {
+  new CleanWebpackPlugin(["bundle.*.js", "bundle.*.css"], {
     // log
     verbose: true,
     // del
@@ -86,8 +90,13 @@ const plugins = [
     disable: process.env.NODE_ENV === "development"
   }),
   new HtmlWebpackPlugin({
-    template: "index.html"
-  })
+    template: "./src/index.html"
+  }),
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.DefinePlugin({
+    "process.env.NODE_ENV": '"development"'
+  }),
+  new webpack.NoEmitOnErrorsPlugin()
 ];
 
 if (isProduction) {
@@ -111,13 +120,18 @@ module.exports = {
     bundle: entryPath
     // vendor: VENDOR
   },
+  // entry: ['webpack/hot/dev-server', entryPath],
 
   output: {
     path: buildPath, // 输出路径
-    filename: "[name].[chunkhash].js", // 输出文件
-    // filename: "[name].js", // 输出文件
+    filename: "[name].[hash].js", // 输出文件
+    // filename: "[name].[chunkhash].js", // 输出文件
     publicPath: "./"
   },
+  // output: {
+  // path: path.resolve(__dirname, './__build__'),
+  // filename: 'bundle.js'
+  // },
 
   resolve: {
     // 文件扩展名，写明以后不需要每个文件都写后缀
@@ -134,5 +148,10 @@ module.exports = {
     rules
   },
 
-  plugins
+  plugins,
+
+  devServer: {
+    inline: true,
+    port: 8099
+  }
 };

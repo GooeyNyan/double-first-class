@@ -1,28 +1,78 @@
+/*
+ * @Author: Gooey Nyan 
+ * @Date: 2017-09-26 12:16:20 
+ * @Last Modified by: Gooey Nyan
+ * @Last Modified time: 2017-10-27 13:23:32
+ */
+
 import styles from "./overview.sass";
+import njupt from "./njupt.jpg";
 
 const wrapper = document.createElement("div");
-wrapper.className = styles.wrapper;
+wrapper.className = styles.overview;
 
-const titleElem = document.createElement("h2");
-titleElem.className = styles.title;
-titleElem.innerText = "校园概况";
-const title = [titleElem];
+// 标题
+const titleWrapper = document.createElement("div");
+titleWrapper.className = styles.titleWrapper;
 
-const small = [];
-const smallText = [
-  "在这次的双一流评选中，南京邮电大学在电子信息类大学与江苏省属高校中脱颖而出，率先入选世界一流学科并且提出建设中国高水平研究型大学。",
-  "标志着南京邮电大学学科建设进入世界一流行列，全校综合实力位于全国前列。"
-];
+const title = document.createElement("h2");
+title.textContent = "校园概况";
+title.className = styles.title;
 
-for (const item of smallText) {
-  const elem = document.createElement("p");
-  elem.className = styles.small;
-  elem.innerText = item;
-  small.push(elem);
+const line1 = document.createElement("div");
+const line2 = document.createElement("div");
+line1.className = styles.line;
+line2.className = styles.line;
+
+titleWrapper.appendChild(line1);
+titleWrapper.appendChild(title);
+titleWrapper.appendChild(line2);
+
+wrapper.appendChild(titleWrapper);
+
+// 下部内容
+const contentWrapper = document.createElement("div");
+contentWrapper.className = styles.contentWrapper;
+const imgWrapper = document.createElement("div");
+imgWrapper.className = styles.imgWrapper;
+const njuptImg = document.createElement("img");
+njuptImg.src = njupt;
+njuptImg.className = styles.img;
+const imgBorder = document.createElement("div");
+imgBorder.className = styles.imgBorder;
+
+const contents = document.createElement("div");
+contents.className = styles.contents;
+
+class Content {
+  constructor(params) {
+    this.color = params.color;
+    this.texts = params.text;
+  }
+
+  render() {
+    const elWrapper = document.createElement("div");
+    elWrapper.className = styles.contentItem;
+    const round = document.createElement("div");
+    round.style.background = this.color;
+    round.className = styles.round;
+
+    const textWrapper = document.createElement("div");
+    textWrapper.className = styles.textWrapper;
+    const fragment = document.createDocumentFragment();
+    for (const text of this.texts) {
+      const p = document.createElement("p");
+      p.textContent = text;
+      fragment.appendChild(p);
+    }
+    textWrapper.appendChild(fragment);
+    elWrapper.appendChild(round);
+    elWrapper.appendChild(textWrapper);
+    return elWrapper;
+  }
 }
 
-const desc = [];
-const descText = [
+const texts = [
   [
     `2016年5月，国家邮政局与南京邮电大学共建现代邮政学院和现代邮政研究院。`,
     `2017年8月，南京邮电大学"微纳器件与信息系统创新引智基地"项目入选国家"111计划"。`,
@@ -43,21 +93,20 @@ const descText = [
   ]
 ];
 
-for (const item of descText) {
-  const textWrapper = document.createElement("div");
-  textWrapper.className = styles["desc-wrapper"];
-  for (const text of item) {
-    const textElem = document.createElement("p");
-    textElem.className = styles.desc;
-    textElem.innerText = text;
-    textWrapper.appendChild(textElem);
-  }
-  desc.push(textWrapper);
+const roundColors = ["#b49ac6", "#a9aed7", "#b49ac6", "#a9aed7"];
+
+for (let i = 0; i < 4; i += 1) {
+  const content = new Content({
+    color: roundColors[i],
+    text: texts[i]
+  });
+  contents.appendChild(content.render());
 }
 
-const elems = title.concat(small, desc);
-for (const item of elems) {
-  wrapper.appendChild(item);
-}
+imgWrapper.appendChild(njuptImg);
+imgWrapper.appendChild(imgBorder);
+contentWrapper.appendChild(imgWrapper);
+contentWrapper.appendChild(contents);
+wrapper.appendChild(contentWrapper);
 
 export default wrapper;

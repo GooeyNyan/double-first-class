@@ -1,29 +1,71 @@
-$common-text-color: #1b2d5b
-$small-text-color: #b2b6c0
+$font-color: #7272bc
+$line-color: #ededed
+$purple: #b49ac6
+$blue: #a9aed7
 
-.wrapper
-  flex: 1
-  padding: 100px 100px 0 50px
+.overview
+  margin-top: 50px
+
+.titleWrapper
+  display: flex
+  justify-content: space-between
+  align-items: center
 
 .title
-  font-size: 38px
-  color: $common-text-color
+  margin: 0
+  font-size: 30px
+  font-weight: 100
+  color: $font-color
+  font-style: italic
 
-.small
-  display: inline-block
-  width: 300px
-  line-height: 1.5
-  font-size: 12px
-  vertical-align: top
-  color: $small-text-color
-  &:nth-of-type(2)
-    margin-left: 20px
+.line
+  width: 40%
+  height: 2px
+  background: $line-color
 
-.desc-wrapper
-  margin-bottom: 30px
+.contentWrapper
+  display: flex
+  padding: 4vw 0
 
-.desc
-  margin: 0 0 4px 0
-  max-width: 650px
+.imgWrapper
+  position: relative
+  margin-left: 6vw
+
+.img
+  position: relative
+  width: 20vw
+  height: 23.5vw
+  z-index: 2
+
+.imgBorder
+  position: absolute
+  top: 3vw
+  left: -3vw
+  width: 20vw
+  height: 23.5vw
+  border: 20px solid $purple
+  box-sizing: border-box
+
+.contents
+  margin-left: 6vw
   font-size: 14px
-  color: $common-text-color
+  color: $font-color
+
+.contentItem
+  display: flex
+  margin-top: 2vw
+  align-items: center
+
+.round
+  flex: 0 0 5vw
+  width: 5vw
+  height: 5vw
+  box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451)
+  border-radius: 50%
+
+.textWrapper
+  margin-left: 2vw
+  flex: 1
+  line-height: 1.5
+  p
+    margin: 5px 0
