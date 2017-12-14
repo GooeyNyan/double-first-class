@@ -1,0 +1,74 @@
+$main-bg-color: #f4f8f9
+
+.main
+  position: relative
+  display: flex
+  background: $main-bg-color
+  .main-wrapper
+    position: relative
+    margin: 0 0 20px 6.25vw
+    padding: 0 60px
+    flex: 1
+    min-height: 66vw
+    @media screen and (max-width: 420px)
+      margin: 0 0 20px 11.25vw
+      padding: 0 20px
+  .content-wrapper
+    box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451)
+    .title-wrapper
+      padding: 0 50px
+      height: 80px
+      line-height: 80px
+      font-size: 24px
+      color: #fff
+      text-shadow: 1px 1px 8px #444
+      letter-spacing: 3px
+      overflow: hidden
+      background: rgba(170, 170, 170, 0.2)
+      @media screen and (max-width: 420px)
+        padding: 0 30px
+        height: 50px
+        line-height: 50px
+        font-size: 14px
+    .content
+      font-size: 14px
+      a
+        color: #000
+      .wp_article_list
+        padding-left: 0
+      .list_item
+        padding: 0 30px;
+        width: calc(100% - 60px);
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        list-style-type: none;
+        border-bottom: 1px solid rgba(170, 170, 170, 0.3);
+        transition: all 0.3s ease-out;
+        @media screen and (max-width: 420px)
+          height: 40px
+          line-height: 40px
+          font-size: 14px
+        &:hover
+          background: rgba(170, 170, 170, 0.1)
+          a
+            color: $font-color
+        .Article_Index
+          height: 42px
+          font-size: 12px
+          @media screen and (max-width: 420px)
+            display: none
+        .Article_PublishDate
+          @media screen and (max-width: 420px)
+            display: none
+      @media screen and (max-width: 420px)
+        .pages_count, .page_jump
+          display: none
+          
+
+article
+  .content
+    padding: 30px
+    text-indent: 2em
+    p
+      margin-bottom: 10px

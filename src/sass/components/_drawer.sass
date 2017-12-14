@@ -1,0 +1,100 @@
+$font-color: #7272bc
+$font-size: 1.25vw
+$drawer-bg-color: #f4f8f9
+
+.drawer
+  position: absolute
+  width: 6.25vw
+  height: 100%
+  z-index: 10
+  color: $font-color
+  text-align: center
+  justify-content: center
+  overflow: hidden
+  box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451)
+  background: $drawer-bg-color
+  transition: all 0.5s ease-in-out
+  @media screen and (max-width: 420px)
+    width: 11.25vw
+  &.open
+    width: 12vw
+    @media screen and (max-width: 1600px)
+      width: 8vw
+    @media screen and (max-width: 420px)
+      width: 32vw
+    .text-wrapper
+      margin-top: 20px
+      @media screen and (max-width: 420px)
+        margin-top: 50px
+      .text
+        visibility: hidden
+        opacity: 0
+    .nav-item
+      visibility: inherit
+      opacity: 1
+      .link
+        padding: 12px 40px
+    @media screen and (max-width: 420px)
+      .logo
+        width: 14vw
+        height: 14vw
+  .logo
+    padding-top: 3.3333vw
+    width: 4vw
+    height: 4vw
+    transition: all 0.5s ease-in-out
+  .text-wrapper
+    display: flex
+    margin-top: 140px
+    height: 6.25vw
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    transition: all 0.5s ease-in-out
+  .text
+    margin: 0
+    visibility: inherit
+    font-size: $font-size
+    letter-spacing: 1px
+    transform: rotate(180deg)
+    writing-mode: vertical-rl
+    opacity: 1
+    transition: all 0.5s ease-in-out
+    @media screen and (max-width: 420px)
+      font-size: 14px
+  .nav-list
+    margin-top: -80px
+  .nav-item
+    visibility: hidden
+    line-height: 48px
+    width: 100%
+    height: 48px
+    opacity: 0
+    transition: all 0.5s ease-in-out
+    &:hover
+      background: rgba(7, 17, 27, 0.1)
+    .link
+      font-size: 16px
+      color: $font-color
+      text-decoration: none
+      transition: all 0.5s ease-in-out
+      &:hover, &:visited, &:focus
+        color: $font-color
+  [class*="icon-"]
+    display: block
+    margin-top: 40px
+    padding: 20px 0
+    font-size: $font-size
+    transition: all 0.5s ease-in-out
+    @media screen and (max-width: 420px)
+      font-size: 14px
+  .wp_nav
+    .nav-item
+      a
+        font-size: 16px
+        font-family: 'Roboto', "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif
+        &:hover, &:visited, &:focus
+          color: $font-color
+        .item-name
+          color: $font-color
+

@@ -7,21 +7,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- 强制开启webkit渲染 -->
-	<meta name="renderer" content="webkit">
-	<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1” />
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<link href="./bundle.2d38548d57138c326f297a4bc4431790.css" rel="stylesheet"></head>
+  <link rel="stylesheet" href="./public/css/app.css">
+</head>
 
 <body>
 
-  <div id="root">
+  <header>
+    <a href="http://admin.njupt.edu.cn/_s291/main.psp">
+      <div class="banner">
+        <img src="./public/images/banner.png" alt="南京邮电大学一流学科建设" class="img">
+      </div>
+    </a>
+  </header>
 
-    <header id="header"></header>
+  <main class="main">
+    <aside class="drawer">
+      <img src="./public/images/logo.png" class="logo" alt="南邮校徽">
+      <i class="icon-menu"></i>
+      <div class="text-wrapper">
+        <p class="text">WELCOME TO NJUPT</p>
+      </div>
+      <div class="nav-list">
+        <div frag="窗口1" portletmode="simpleSudyNavi" contents="{'c2':'0', 'c1':'/建设方案,/综合实力,/办学定位,/建设目标,/学科建设,/人才培养,/科学研究,/社会服务,/文化建设,/国际合作,/师资队伍,/国际影响'}">
+          <div frag="窗口内容"></div>
+        </div>
+      </div>
+    </aside>
+    <div class="main-wrapper">
+      <div class="content-wrapper" frag="面板2">
 
-  </div>
+        <div class="content-title" frag='窗口2' portletmode='simpleColumnAttri'>
+          <div frag='窗口内容'>
+            <div class="title-wrapper">
+              <h2 class="title">{栏目名称}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="content" frag="窗口3" portletmode="simpleList">
+          <div frag="窗口内容">
+          </div>
+        </div>
 
-  <!-- <script src="https://cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script> -->
+      </div>
+    </div>
+  </main>
 
-<script type="text/javascript" src="./bundle.d083be64201316003dcf.js"></script></body>
+  <footer class="footer">
+    <div class="address-wrapper">
+      <div>
+        <span>仙林校区地址：南京市亚东新区文苑路9号 邮编：210023</span>
+      </div>
+      <div>
+        <span>三牌楼校区地址：南京市新模范马路66号 邮编：210003</span>
+      </div>
+      <div>
+        <span>锁金村校区地址：南京市龙蟠路177号 邮编：210042</span>
+      </div>
+    </div>
+    <div class="line"></div>
+    <p>Copyright © 1942 - 2017 Nanjing University of Posts and Telecommunications All Rights Reserved</p>
+  </footer>
+
+  <script src="./public/js/main-m.js"></script>
+</body>
 
 </html>

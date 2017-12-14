@@ -1,0 +1,40 @@
+.squares
+  display: flex
+  margin-top: 20px
+  justify-content: space-around
+  flex-wrap: wrap
+  .square-item
+    padding: 2vw 0
+    width: 26vw
+    color: #fff
+    text-align: center
+    box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451)
+    @media screen and (max-width: 420px)
+      padding: 2vw
+    &.i1
+      background: rgb(164, 201, 226)
+    &.i2
+      background: rgb(171, 174, 214)
+    &.i3
+      background: rgb(181, 157, 196)
+      @media screen and (max-width: 420px)
+        margin-top: 20px
+  .title
+    width: 100%
+    font-size: 36px
+    font-weight: 400
+    @media screen and (max-width: 420px)
+      font-size: 24px
+  .text
+    margin-top: 1vw
+    width: 100%
+    font-size: 16px
+    @media screen and (max-width: 420px)
+      font-size: 12px
+  [class*="icon-"]
+    display: block
+    padding: 20px 0
+    font-size: 64px
+    @media screen and (max-width: 420px)
+      padding: 10px 0
+      font-size: 30px

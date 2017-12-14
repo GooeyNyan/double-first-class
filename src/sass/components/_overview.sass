@@ -1,0 +1,87 @@
+$font-color: #7272bc
+$line-color: #ededed
+$purple: #b49ac6
+$blue: #a9aed7
+
+.overview
+  margin-top: 50px
+  @media screen and (max-width: 420px)
+    margin-top: 20px
+  .title-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .title
+    margin: 0
+    font-size: 30px
+    font-weight: 100
+    color: $font-color
+    font-style: italic
+    @media screen and (max-width: 420px)
+      font-size: 20px
+  .line
+    width: 40%
+    height: 2px
+    background: $line-color
+    @media screen and (max-width: 420px)
+      width: 30%
+  .content-wrapper
+    display: flex
+    margin-bottom: 20px
+    padding: 4vw 0
+    @media screen and (max-width: 420px)
+      display: block
+  .img-wrapper
+    position: relative
+    margin-left: 6vw
+  .img
+    position: relative
+    width: 20vw
+    height: 23.5vw
+    z-index: 2
+    @media screen and (max-width: 420px)
+      width: 70vw
+      height: 50vw
+  .img-border
+    position: absolute
+    top: 3vw
+    left: -3vw
+    width: 20vw
+    height: 23.5vw
+    border: 20px solid $purple
+    box-sizing: border-box
+    @media screen and (max-width: 420px)
+      width: 70vw
+      height: 50vw
+  .contents
+    margin-left: 6vw
+    font-size: 14px
+    color: $font-color
+    @media screen and (max-width: 420px)
+      margin-top: 30px
+  .content-item
+    display: flex
+    margin-right: 2vw
+    padding: 2vw 0
+    align-items: center
+    border-bottom: 1px solid rgba(7, 17, 27, 0.2)
+    @media screen and (max-width: 420px)
+      margin-right: 10px
+  .round
+    flex: 0 0 5vw
+    width: 5vw
+    height: 5vw
+    box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451)
+    border-radius: 50%
+    &.i1, &.i3
+      background: rgb(180, 154, 198)
+    &.i2, &.i4
+      background: rgb(169, 174, 215)
+  .text-wrapper
+    margin-left: 2vw
+    flex: 1
+    line-height: 1.5
+    p
+      margin: 5px 0
+      @media screen and (max-width: 420px)
+        font-size: 12px
