@@ -29,6 +29,21 @@ i {
 .icon-library:before {
   content: ""; }
 
+.icon-stack:before {
+  content: ""; }
+
+.icon-users:before {
+  content: ""; }
+
+.icon-user-tie:before {
+  content: ""; }
+
+.icon-airplane:before {
+  content: ""; }
+
+.icon-tree:before {
+  content: ""; }
+
 .icon-menu:before {
   content: ""; }
 
@@ -635,6 +650,7 @@ article .content {
   justify-content: space-around;
   flex-wrap: wrap; }
   .squares .square-item {
+    margin-bottom: 20px;
     padding: 2vw 0;
     width: 26vw;
     color: #fff;
@@ -649,9 +665,16 @@ article .content {
       background: #abaed6; }
     .squares .square-item.i3 {
       background: #b59dc4; }
-      @media screen and (max-width: 420px) {
-        .squares .square-item.i3 {
-          margin-top: 20px; } }
+    .squares .square-item.i4 {
+      background: #a4c9e2; }
+    .squares .square-item.i5 {
+      background: #abaed6; }
+    .squares .square-item.i6 {
+      background: #b59dc4; }
+    .squares .square-item.i7 {
+      background: #a4c9e2; }
+    .squares .square-item.i8 {
+      background: #abaed6; }
   .squares .title {
     width: 100%;
     font-size: 36px;
@@ -748,11 +771,16 @@ article .content {
       .overview .content-item {
         margin-right: 10px; } }
   .overview .round {
+    display: flex;
     flex: 0 0 5vw;
     width: 5vw;
     height: 5vw;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.156863), 0 3px 10px rgba(0, 0, 0, 0.227451);
-    border-radius: 50%; }
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center; }
+    .overview .round .text {
+      color: #fff; }
     .overview .round.i1, .overview .round.i3 {
       background: #b49ac6; }
     .overview .round.i2, .overview .round.i4 {

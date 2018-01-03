@@ -68,11 +68,16 @@ $blue: #a9aed7
     @media screen and (max-width: 420px)
       margin-right: 10px
   .round
+    display: flex
     flex: 0 0 5vw
     width: 5vw
     height: 5vw
     box-shadow: 0 3px 10px rgba(0,0,0,.156863), 0 3px 10px rgba(0,0,0,.227451)
     border-radius: 50%
+    justify-content: center
+    align-items: center
+    .text
+      color: #fff
     &.i1, &.i3
       background: rgb(180, 154, 198)
     &.i2, &.i4

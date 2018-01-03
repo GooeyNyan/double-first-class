@@ -40,6 +40,31 @@ i {
     content: $icon-library;
   }
 }
+.icon-stack {
+  &:before {
+    content: $icon-stack;
+  }
+}
+.icon-users {
+  &:before {
+    content: $icon-users;
+  }
+}
+.icon-user-tie {
+  &:before {
+    content: $icon-user-tie;
+  }
+}
+.icon-airplane {
+  &:before {
+    content: $icon-airplane;
+  }
+}
+.icon-tree {
+  &:before {
+    content: $icon-tree;
+  }
+}
 .icon-menu {
   &:before {
     content: $icon-menu;
